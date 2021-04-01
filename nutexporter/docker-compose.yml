@@ -1,0 +1,13 @@
+version: "2"
+services:
+  nutexporter:
+    image: maihai/nut-influxdb-exporter
+    container_name: nutexporter
+    environment:
+      - INFLUXDB_HOST=192.168.1.7
+      - NUT_HOST=192.168.1.5
+      - NUT_PORT=3493
+      - UPS_NAME=qnapups
+      - WATTS=390
+    # - VERBOSE=true
+    restart: unless-stopped

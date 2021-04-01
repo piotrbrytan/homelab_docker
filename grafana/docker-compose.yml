@@ -1,0 +1,15 @@
+version: "2"
+services:
+  grafana:
+    image: grafana/grafana 
+    container_name: grafana
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_INSTALL_PLUGINS=grafana-simple-json-datasource
+    volumes:
+      - /home/piotr/grafana/data:/var/lib/grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped

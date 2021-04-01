@@ -1,0 +1,14 @@
+version: "2"
+services:
+  influxdb:
+    image: influxdb:1.8
+    container_name: influxdb
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - /home/piotr/influxdb:/var/lib/influxdb
+      - /home/piotr/influxdb/config:/etc/influxdb/
+    ports:
+      - 8086:8086
+    restart: unless-stopped
