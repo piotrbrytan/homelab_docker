@@ -1,6 +1,15 @@
+# ignore all folders
 !*/
 */*
+
+# unignore all yml files in folders
 !*/*.yml
+
+# ignore dotfiles and txt files
 .*
 *.txt
+
+# unignore gitignore 
 !.gitignore
+
+
